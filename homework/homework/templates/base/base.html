@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width ,initial-scale=1">
+    <script src="/static/js/jquery-3.2.1.min.js"></script>
+    <link rel="stylesheet" href="/static/bs/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/bs/css/dashboard.css">
+    <script src="/static/chart/highcharts.js"></script>
+</head>
+<body>
+
+
+{#导航条#}
+<div>
+{% include 'base/nav.html' %}
+</div>
+{#左侧导航条#}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+            <ul class="nav nav-sidebar">
+                <li class="{% block publisher %}{% endblock %}"><a href="/index">用户详情</a></li>
+                <li class="{% block book %}{% endblock %}"><a href="/uplode">上传代码</a></li>
+            </ul>
+        </div>
+     </div>
+
+  </div>
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+
+
+    {% block page_main %}
+        {#    内容  #}
+    {% endblock %}
+ </div>
+
+
+
+<script src="/static/bs/js/bootstrap.min.js"></script>
+
+</body>
+</html>
